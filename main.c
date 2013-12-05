@@ -3,6 +3,11 @@
 #include "prox.h"
 #include "led.h"
 
+#include "aggressive.c"
+#include "fear.c"
+#include "curious.c"
+#include "zomble.c"
+
 int main(void)
 {
 	selector=getselector();
