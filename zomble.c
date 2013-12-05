@@ -3,7 +3,7 @@
 #include "prox.h"
 #include "led.h"
 
-int main(void)
+int zomble()
 {
 	long i = 0;			                // loop counter
 	int left = 0;		                // speed of left wheel

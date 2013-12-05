@@ -1,4 +1,4 @@
 zomble
 ======
 
-epuck robot behaviour: zombie infection
+e-puck basic robot behaviours + more advanced zombie behaviour
