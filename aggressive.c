@@ -22,10 +22,11 @@ int aggressive()
 	SetSpeedLeft(100);
 	
 	while (1) {
-		left+=38;
-		right+=38;
+		//smooth
 		left = left * 0.9;
 		right = right * 0.9;
+		left+=38;
+		right+=38;
 
 		/*light up led if something is near it in that direction*/
 		/*and also adjusts wheel speed depending on which ones are lit up*/
@@ -65,16 +66,17 @@ int aggressive()
 		
 		//front sensors
 		//todo: blindly charges straight forwards, is that what we want?
-		//		if not, then make a counter variable to see how long
-		//		the front sensors have been going and reverse after.
+		//		if not, then adjust slightly based on sensors
 		if (GetProx(0)>800 || GetProx(7)>800) {
-			//push for a while
+			//light up
 			for (i=0;i<7;i++) {
 				SetLed(i,1);
 			}
+			SetFrontLed(1);
+			//push for a while
 			SetSpeedRight(1000);
 			SetSpeedLeft(1000);
-			/*wait*/for(i=0;i<1000000;i++) {asm("nop");}
+			/*wait*/for(i=0;i<800000;i++) {asm("nop");}
 			
 			LedClear();
 			//reverse after pushing
