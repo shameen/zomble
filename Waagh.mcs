@@ -2,135 +2,200 @@
 MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
 Version=1.0
 [File000]
-Location=C:\Users\cosa2\Desktop\zomble-master\main.o
+Location=C:\Users\Shameen\zomble\aggressive.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c|other libs\utility.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File001]
-Location=C:\Users\cosa2\Desktop\zomble-master\ad_conv.o
+Location=C:\Users\Shameen\zomble\curious.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File002]
-Location=C:\Users\cosa2\Desktop\zomble-master\init_port.o
+Location=C:\Users\Shameen\zomble\fear.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File003]
-Location=C:\Users\cosa2\Desktop\zomble-master\led.o
+Location=C:\Users\Shameen\zomble\accelerometer.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File004]
-Location=C:\Users\cosa2\Desktop\zomble-master\motors.o
+Location=C:\Users\Shameen\zomble\ad_conv.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File005]
-Location=C:\Users\cosa2\Desktop\zomble-master\prox.o
+Location=C:\Users\Shameen\zomble\init_port.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File006]
-Location=C:\Users\cosa2\Desktop\zomble-master\accelerometer.o
+Location=C:\Users\Shameen\zomble\led.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File007]
-Location=C:\Users\cosa2\Desktop\zomble-master\utility.o
+Location=C:\Users\Shameen\zomble\motors.o
 Folder=Intermediary
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c|other libs\utility.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File008]
-Location=C:\Users\cosa2\Desktop\zomble-master\Waagh.cof
+Location=C:\Users\Shameen\zomble\prox.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File009]
+Location=C:\Users\Shameen\zomble\love2.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File010]
+Location=C:\Users\Shameen\zomble\main.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File011]
+Location=C:\Users\Shameen\zomble\utility.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File012]
+Location=C:\Users\Shameen\zomble\zomble.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File013]
+Location=C:\Users\Shameen\zomble\Waagh.cof
 Folder=Output
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c|other libs\utility.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
-ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
 TraceCmdString=
 DebugOptions=--defsym=__MPLAB_DEBUG=1
-[File009]
-Location=C:\Users\cosa2\Desktop\zomble-master\Waagh.hex
+[File014]
+Location=C:\Users\Shameen\zomble\Waagh.hex
 Folder=Output
 DeviceName=dsPIC30F6014A
 LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
-LanguageToolLocation=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
-PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\support\h||$(LIBDIR)|C:\Program Files (x86)\Microchip\MPLAB C30\lib||$(LKRDIR)||
-SOLK=<src>|main.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|Librairies clean\accelerometer.c|other libs\utility.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld||
+LanguageToolLocation=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Librairies clean\accelerometer.c|Librairies clean\ad_conv.c|Librairies clean\init_port.c|Librairies clean\led.c|Librairies clean\motors.c|Librairies clean\prox.c|love2.c|main.c|other libs\utility.c|zomble.c||<obj>||<lib>|Librairies clean\uart_char.a|other libs\libdsp-coff.a|other libs\libdsp-elf.a||<lkr>|other libs\p30f6014A.gld||
 SuiteArgsString=
-ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
 TraceCmdString=
 DebugOptions=--defsym=__MPLAB_DEBUG=1
 [TOOL_LOC_STAMPS]
-tool_loc{069BD372-6CA0-40D4-BF2F-5DC806D05083}=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
-tool_loc{433C3D55-811D-409D-A6BF-159CF9355B42}=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+tool_loc{069BD372-6CA0-40D4-BF2F-5DC806D05083}=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-gcc.exe
+tool_loc{433C3D55-811D-409D-A6BF-159CF9355B42}=C:\Program Files (x86)\Microchip\mplabc30\v3.31\bin\pic30-ld.exe

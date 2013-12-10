@@ -3,7 +3,7 @@
 #include "Librairies Clean/prox.h"
 #include "Librairies Clean/led.h"
 
-- void zomble(void)
+void zomble(void)
 {
 	long i = 0;                         // loop counter
 	int left = 0;                       // speed of left wheel
@@ -54,7 +54,8 @@
 		}
 		else { //is human
 			
-			robotfear();
+			//todo: this will make an infinite loop
+			fear();
 			
 			int becomingZombie = 0;
 			//todo: detect attack from zombie

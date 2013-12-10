@@ -3,7 +3,7 @@
 #include "Librairies Clean/prox.h"
 #include "Librairies Clean/led.h"
 
-- void aggressive(void)
+void aggressive(void)
 {
 	long i = 0;			//loop counter, mainly for waiting
 	int left = 0;		//speed of left wheel

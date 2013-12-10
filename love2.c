@@ -3,15 +3,15 @@
 #include "Librairies Clean/prox.h"
 #include "Librairies Clean/led.h"
 
-- void love(void)
+void love(void)
 {
 	long i = 0;						//loop counter
 	int left = 0;					//speed of left wheel
 	int right = 0;					//speed of right wheel
-	int waitinterval = 40000;		//processor steps to wait between each iteration of the main loop
+	long waitinterval = 40000;		//processor steps to wait between each iteration of the main loop
 	
-	int heartBeatInterval = 400000;	//Max interval before a heartbeat (in processor steps)
-	int heartBeatcur = 0;			//Counts how many steps since last heartbeat
+	long heartBeatInterval = 400000;	//Max interval before a heartbeat (in processor steps)
+	long heartBeatCur = 0;			//Counts how many steps since last heartbeat
 	int heartBeatLEDs = 0;			//0 for all off, 1 for all on
 	
 	//setup
@@ -66,9 +66,9 @@
 		int heartBeatMax = heartBeatInterval-frontProx*20;
 		
 		//if it's time to do heartbeat
-		if (heartBeatCur*waitinterval > frontProx) {
+		if (heartBeatCur*waitinterval > heartBeatMax) {
 			//toggle between 0 and 1
-			heartBeatLEDs = 1 - v;
+			heartBeatLEDs = 1 - heartBeatLEDs;
 			//set LEDs
 			for (i=0;i<7;i++) {
 				SetLed(i,heartBeatLEDs);

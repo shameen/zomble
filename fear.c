@@ -2,8 +2,18 @@
 #include "Librairies Clean/motors.h"
 #include "Librairies Clean/prox.h"
 #include "Librairies Clean/led.h"
+#include "library/motor_led/e_led.h"
 
-- void fear(void)
+void LedFearFlash(void)
+{
+	long i;
+	for (i=0;i<9;i++) {
+		SetLed(i,1);
+		for (i=0;i<40000;i++) {asm("nop");}
+	}
+}
+
+void fear(void)
 {
 	long i;
 	InitMotors();
