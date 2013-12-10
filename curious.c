@@ -1,10 +1,9 @@
-#include "init_port.h"
-#include "motors.h"
-#include "prox.h"
-#include "led.h"
-#include "stdlib.h"
+#include "Librairies Clean/init_port.h"
+#include "Librairies Clean/motors.h"
+#include "Librairies Clean/prox.h"
+#include "Librairies Clean/led.h"
 
-int curious()
+- void curious(void)
 {
 	long i;
 	InitMotors();

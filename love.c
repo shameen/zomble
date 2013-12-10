@@ -1,15 +1,17 @@
-#include "p30f6014A.h"
 #include "stdio.h"
 #include "string.h"
 
-#include "uart_char.h"
-#include "init_port.h"
-#include "init_port.h"
-#include "motors.h"
-#include "led.h"
-#include "ad_conv.h"
+#include "Librairies Clean/uart_char.h"
+#include "Librairies Clean/init_port.h"
+#include "Librairies Clean/motors.h"
+#include "Librairies Clean/led.h"
+#include "Librairies Clean/ad_conv.h"
 
-#include "followball.h"
+#include "other libs/followball.h"
+#include "other libs/agenda.h"
+#include "other libs/.h"
+#include "library/a_d/advance_ad_scan/e_ad_conv.h"
+
 
 #define PI 3.14159265358979
 
