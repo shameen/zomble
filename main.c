@@ -18,6 +18,7 @@ int main(void)
 		case 1:fear();break;
 		case 2:curious();break;
 		case 3:love();break;
+		case 4:maze();break;
 		default:zomble();break;
 	}
 }
