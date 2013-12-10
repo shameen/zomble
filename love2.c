@@ -40,22 +40,29 @@ void love(void)
 			if (GetProx(i)>=500) {	
 				switch (i) {
 					//left side sensors
-					case 0:left+=150;right+=100;break;
-					case 1:left+=100;right-=100;break;
-					case 2:left+=300;right-=400;break;
+					case 0:left+=80;right+=50;break;
+					case 1:left+=50;right-=50;break;
+					case 2:left+=200;right-=300;break;
 					//back sensors
-					case 3:left+=400;right-=300;break;
-					//case 4:left-=300;right+=400;break; //commented out because left priority below
-					case 4:left+=400;right-=300;break;//testing left turn on both
+					case 3:left+=300;right-=200;break;
+					//case 4:left-=200;right+=300;break; //commented out because left priority below
+					case 4:left+=300;right-=200;break;//testing left turn on both
 					//right side sensors
-					case 5:left-=400;right+=300;break;
-					case 6:left-=100;right+=100;break;
-					case 7:left+=150;right+=100;break;
+					case 5:left-=300;right+=200;break;
+					case 6:left-=50;right+=50;break;
+					case 7:left+=80;right+=50;break;
 				}
 				SetLed(i,1);
 			}
 			else SetLed(i,0);
 		}
+        
+        //too close
+        if (GetProx(0)>800 || GetProx(7)>800) {
+            left = -50;
+            right = -50;
+        }
+        
 		
 		//heartbeat
 		heartBeatCur++;
