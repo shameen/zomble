@@ -126,7 +126,7 @@ file_020=Librairies clean\uart_char.h
 file_021=Librairies clean\uart_char.a
 file_022=other libs\libdsp-coff.a
 file_023=other libs\libdsp-elf.a
-file_024=C:\Program Files (x86)\Microchip\MPLAB C30\support\gld\p30f6014A.gld
+file_024=other libs\p30f6014A.gld
 [SUITE_INFO]
 suite_guid={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 suite_state=
