@@ -39,11 +39,11 @@ void fear(void)
 			for(i=0;i<160000;i++) {asm("nop");}
 			
 			// Do a 180 degree spin
-			left=-800;right=800;
+			left=-900;right=900;
 			SetSpeedRight(right);
 			SetSpeedLeft(left);
 			LedFearFlash();
-			for(i=0;i<500000;i++) {asm("nop");}
+			for(i=0;i<600000;i++) {asm("nop");}
 			
 			// Speed forwards for a period of time
 			left=1000;right=1000;

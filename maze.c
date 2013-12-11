@@ -10,7 +10,7 @@ void maze(void)
 	InitMotors();
 	InitProx();
 	LedClear();
-	SetFrontLed(1);
+	SetLed(4,1);
 	SetStepsRight(1);
 	SetStepsLeft(1);
 	int left = 0;
