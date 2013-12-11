@@ -6,10 +6,10 @@
 
 void LedFearFlash(void)
 {
-	long i;
-	for (i=0;i<9;i++) {
+	int i;
+	for (i=0;i<7;i++) {
 		SetLed(i,1);
-		for (i=0;i<40000;i++) {asm("nop");}
+		for (i=0;i<10000;i++) {asm("nop");}
 	}
 }
 
