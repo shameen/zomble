@@ -21,7 +21,7 @@ EPFL Ecole polytechnique federale de Lausanne http://www.epfl.ch
 #include <stdlib.h>
 
 #include "search_ball.h"
-#include "./../../library/motor_led/advance_one_timer/e_motors.h"
+#include "../library/motor_led/advance_one_timer/e_motors.h"
 
 //*******************************************************
 //variable globale

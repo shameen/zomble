@@ -9,7 +9,7 @@
 #include "curious.h"
 #include "love2.h"
 #include "zomble.h"
-#include "soundz.h"
+//#include "soundz.h"
 
 int main(void)
 {
@@ -20,7 +20,7 @@ int main(void)
 		case 2:curious();break;
 		case 3:love();break;
 		case 4:maze();break;
-		case 5:soundz();break;
+		//case 5:soundz();break;
 		default:zomble();break;
 	}
 }

@@ -79,6 +79,7 @@ void aggressive(void)
 			/*wait*/for(i=0;i<800000;i++) {asm("nop");}
 			
 			LedClear();
+			SetFrontLed(0);
 			//reverse after pushing
 			left = -900;
 			right = -900;

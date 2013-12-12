@@ -77,12 +77,12 @@ EPFL Ecole polytechnique federale de Lausanne http://www.epfl.ch
 #include <p30f6014a.h>
 #include <string.h>
 
-#include "motor_led/e_epuck_ports.h"
-#include "motor_led/e_init_port.h"
-#include "uart/e_uart_char.h"
-#include "motor_led/advance_one_timer/e_agenda.h"
-#include "motor_led/advance_one_timer/e_motors.h"
-#include "camera/fast_2_timer/e_po3030k.h"
+#include "../library/motor_led/e_epuck_ports.h"
+#include "../library/motor_led/e_init_port.h"
+#include "../library/uart/e_uart_char.h"
+#include "../library/motor_led/advance_one_timer/e_agenda.h"
+#include "e_motors.h"
+#include "../library/camera/fast_2_timer/e_po3030k.h"
 
 #include "search_ball.h"
 
