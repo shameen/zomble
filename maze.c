@@ -56,7 +56,7 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");}
 			}
-			while ( (GetProx(0) >= 500 || GetProx(7) >= 1000 || GetProx(1) >= 800) && GetProx(2) >= 500){
+			while (GetProx(0) >= 500 || GetProx(7) >= 1000 || GetProx(1) >= 800){
 				left = -300; 
 				right = 300; 
 				SetSpeedRight(right); 
