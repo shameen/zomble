@@ -18,13 +18,12 @@ void zomble(void)
     int zombieTurnSpeed = 20;        // speed that zombies turn to look around (default: 5)
     int zombieCurTurn = 0;           // counter
     int infectExposure[8] = { '0', '0', '0', '0', '0', '0', '0', '0' };
-    int infectThreshold = 15;
+    int infectThreshold = 10;
 
     //setup
     InitMotors();
     InitProx();
     LedClear();
-    SetBodyLed(1);
     SetStepsRight(1);
     SetStepsLeft(1);
     SetSpeedRight(100);
@@ -32,18 +31,24 @@ void zomble(void)
 	for (i = 0; i < 7; i++) {
 		SetLed(i,1);
 	}
+    SetBodyLed(1);
 
     while (1) {
 
         if (isZombie == 1) {
             left = left * 0.9;
             right = right * 0.9;
+			left+=rand()%80;right+=rand()%80;
 
             /*make zombie look around left and right*/
             //todo: maybe make it only peek side to side
             //todo: check maxspeed
-            left+=rand()%80;
-			right+=rand()%80;
+            /*zombieCurTurn += zombieTurnSpeed;
+			left -= zombieCurTurn;
+            right += zombieCurTurn;
+            if (zombieCurTurn > zombieTurnSpeed * 5 || zombieCurTurn < -(zombieTurnSpeed * 5)) {
+                zombieTurnSpeed = zombieTurnSpeed * -1;
+            }*/
 
 			/*ZOMBIE AMBIENT LIGHT FIELD
 			for (i=0;i<7;i++) {
@@ -67,49 +72,67 @@ void zomble(void)
 				else SetLed(i,0);
 			}*/
 			//ZOMBIE PROXIMITY SENSOR FIELD
-            for (i = 0; i < 7; i++) {
-                if (GetProx(i) >= 700) {
+            /*for (i = 0; i < 6; i++) {
+                if (GetProx(i) >= 400) {
                     switch (i) {
-                        //left side sensors
-	                    case 0: left += 100;right += 50;break;
-	                    case 1: left += 150;right -= 150;break;
-	                    case 2: left += 200;right -= 200;break;
+                        //front sensors
+	                    case 0:case 7:
+							left += 250;right += 250;break;
+						case 1:left+=300;right += -200;break;
+						case 6:left+=-200;right += 300;break;
                         //back sensors
-                    	case 3: left += 300; right -= 300;break;
-                    	case 4:left += 300;right -= 300;break;
-                        //right side sensors
-	                    case 5:left -= 200;right += 200;break;
-	                    case 6:left -= 150;right += 150;break;
-	                    case 7:left += 100;right += 50;break;
+                    	case 3:
+                    	case 4:left += 800;right += 800;break;
+                        //side sensors
+						case 2:left += 350;right += -100;break;
+	                    case 5:left += -100;right += 350;break;
                     }
                 }
 
-            }
+            }*/
+			if (GetProx(0)>500 || GetProx(7)>500) {
+				left-=450;right+=450;
+			}
+			if (GetProx(2)>500) {
+				left+=350;right-=450;
+			}
+			if (GetProx(5)>500) {
+				left+=350;right-=450;
+			}
+			if (GetProx(1)>500) {
+				left=350;right-=250;
+			}
+			if (GetProx(6)>500) {
+				left-=250;right+350;
+			}
 
             int humanDetected = 0;
-            //todo:search for 'red'
-            if (GetProx(0) > 800 || GetProx(7) > 800) {
-				int ambient = GetAmbientLight(0);
-                if (ambient<4070) {
+            //hit in front
+            if (GetProx(0) > 500 || GetProx(7) > 500 /*|| GetProx(1) > 650 || GetProx(6) > 650*/) {
+				//check if it's giving light
+				//around 4085
+                if (GetAmbientLight(0)<4070 || GetAmbientLight(7)<4070 /*|| GetAmbientLight(1)>4080 || GetAmbientLight(6)>4080*/) {
 					humanDetected==1;
 				}
 				else {
-					SetSpeedLeft(800);
-					SetSpeedRight(-800);
-					/*wait */ for (i = 0; i < 600000; i++) {
-			            asm("nop");
-			        }
-					SetSpeedLeft(500);
-					SetSpeedRight(500);
-					/*wait */ for (i = 0; i < 400000; i++) {
-			            asm("nop");
-			        }
+					// Turn around
+					left=-900;right=900;
+					SetSpeedRight(right);
+					SetSpeedLeft(left);
+					for(i=0;i<550000;i++) {asm("nop");}
+					
+					// Speed forwards for a period of time
+					left=600;right=600;
+					SetSpeedRight(right);
+					SetSpeedLeft(left);
+					for(i=0;i<160000;i++) {asm("nop");}
 				}
             }
             if (humanDetected == 1) {
                 //todo: adjust speed accordingly if it isnt straight ahead
-                SetSpeedLeft(800);
-                SetSpeedRight(800);
+				for (i=0;i<7;i++) { SetLed(i,1); }
+                SetSpeedLeft(750);
+                SetSpeedRight(750);
                 /*wait */ for (i = 0; i < 1000000; i++) {asm("nop");}
                 left = -100;
                 right = -100;
@@ -131,41 +154,68 @@ void zomble(void)
             }*/
 
         } else {
+
+
+
+
+
+
+
+//=======================================================================
 //=======================================================================
 //human
 
-            {                        
-				//modified fear
-                left = left * 0.9;
-	            right = right * 0.9;
-	            left += 38;
-	            right += 38;
+
+
+
+
+
+            {
+				//modified fear	            
+				left = 300;right=300;
+				/*
 				for (i = 0; i < 7; i++) {
 	                if (GetProx(i) >= 500) {
 	                    switch (i) {
 	                        //left side sensors
-		                    case 0:left -= 100;right -= 50;break;
-		                    case 1:left -= 100;right += 100;break;
-		                    case 2:left -= 100;right += 100;break;
+		                    case 0:case 7:
+								left += 450;right += -450;break;
+							case 1:left+=-350;right += 350;break;
+							case 6:left+=350;right += -350;break;
 	                        //back sensors
-	                    	case 3:left -= 200; right += 200;break;
-	                    	case 4:left -= 200;right += 200;break;
-	                        //right side sensors
-		                    case 5:left += 100;right -= 100;break;
-		                    case 6:left += 50;right -= 50;break;
-		                    case 7:left -= 100;right -= 50;break;
+	                    	case 3:
+	                    	case 4:left += 200;right += 200;break;
+	                        //side sensors
+							case 2:left += -150;right += 350;break;
+		                    case 5:left += 350;right += -150;break;
 	                    }
 	                }
+				}*/
+				if (GetProx(0)>500 || GetProx(7)>500) {
+					left+=450;right-=450;
 				}
+				if (GetProx(2)>500) {
+					left-=350;right+=450;
+				}
+				if (GetProx(5)>500) {
+					left-=350;right+=450;
+				}
+				if (GetProx(1)>500) {
+					left=350;right=-250;
+				}
+				if (GetProx(6)>500) {
+					left=-250;right+=350;
+				}
+				
+				left=left*0.9;right=right*0.9;
+				left+=40;right+=40;
 
+                if (GetProx(0) > 450 || GetProx(1) > 450 || GetProx(6) > 450 || GetProx(7) > 450) {
 
-                if (GetProx(0) > 800 || GetProx(1) > 800 || GetProx(6) > 800 || GetProx(7) > 800) {
-                    SetSpeedLeft(-250);
-                    SetSpeedRight(-800);
-					/*wait */ for (i = 0; i < 40000; i++) {
-			           asm("nop");
-			       }
-                } else if ((GetProx(2) > 800 || GetProx(3) > 800 || GetProx(4) > 800 || GetProx(5) > 800)) {
+                    left = -250;
+                    right = -800;
+					waitlonger=1;
+                } else if ((GetProx(2) > 450 || GetProx(3) > 450 || GetProx(4) > 450 || GetProx(5) > 450)) {
                     // Speed forwards for a period of time
                     left = 300;
                     right = 300;
@@ -188,12 +238,17 @@ void zomble(void)
                 }*/
 
                 int becomingZombie = 0;
-                //todo: detect attack from zombie
+                //detect attack from zombie
                 for (i = 0; i < 7; i++) {
                     //touching from the same direction for a short time leads to zombie
                     if (GetProx(i) >= 800) {
-						if (i==5) continue;
-                        infectExposure[i]++;
+						//should be closer for the sides to set it off
+						if (i==5||i==2) {
+								if (GetProx(i)>950)
+									infectExposure[i]++;
+						}
+                        else infectExposure[i]++;
+						
                         if (infectExposure[i] > infectThreshold)
                             becomingZombie = 1;
                     } else
@@ -205,23 +260,23 @@ void zomble(void)
                     //death 'animation'
                     SetSpeedRight(5);
                     SetSpeedLeft(5);
-                    LedClear();
                     SetFrontLed(1);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
                     SetLed(0, 0);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
                     SetLed(7, 0);
                     SetLed(1, 0);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
                     SetLed(2, 0);
                     SetLed(6, 0);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
                     SetLed(3, 0);
                     SetLed(5, 0);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
                     SetLed(4, 0);
-                    /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                    /*wait */ for (i = 0; i < 200000; i++) {asm("nop");}
 					SetFrontLed(0);
+					SetBodyLed(0);
                     isZombie = 1;
                 }
 
@@ -229,7 +284,12 @@ void zomble(void)
         }
 
 
-        /*wait */ for (i = 0; i < 40000; i++) {
+
+
+
+
+
+        /*wait */ for (i = 0; i < 30000; i++) {
             asm("nop");
         }
         SetSpeedRight(right);

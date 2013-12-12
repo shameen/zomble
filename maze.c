@@ -23,10 +23,8 @@ void maze(void)
 			int j;
 			for(i=0;i<100000;i++) {asm("nop");}
 
-			left =300;
+			left = 300;
 			right = 300;
-			left = left * 0.9;
-			right = right * 0.9;
 
 			/*wait*/for(i=0;i<40000;i++) {asm("nop");}
 			SetSpeedRight(right);
@@ -49,14 +47,16 @@ void maze(void)
 		}
 
 		while(curious==1){
+			//too far from wall
 			if(GetProx(2) < 400){
-				//turn right
+				//turn right, towards wall
 				left = 300; 
 				right = 100; 
 				SetSpeedRight(right); 
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");}
 			}
+			//wall in front and on the right
 			while (GetProx(0) >= 500 || GetProx(7) >= 600 || GetProx(1) >= 350){
 				//sharp turn left
 				left = -300; 
@@ -65,6 +65,7 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
 			} 
+			//too close to wall
 			if (GetProx(2) > 600){ 
 				//turn left
 				left = 0; 
@@ -73,6 +74,7 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
 			} 	
+			//enough for it to go straight forwards
 			if ( GetProx(2) >= 400 && GetProx(0) < 500 && GetProx(7) < 600 && GetProx(1) < 350 && GetProx(6) <= 800 && GetProx(2) <= 600){ 
 				//go forwards
 				left = 300; 
@@ -83,6 +85,7 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
 			} 
+			//
 			if (GetProx(5) > 600 || GetProx(6) > 600 ){ 
 				left = 300; 
 				right = 0; 
@@ -90,7 +93,8 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
 			}
-			if (GetAmbientLight(0)<4050 || GetAmbientLight(7)<4050) {
+			//goal detection
+			if (GetAmbientLight(0)<4000 || GetAmbientLight(7)<4000) {
 				SetSpeedLeft(0);
 				SetSpeedRight(0);
 				int j;

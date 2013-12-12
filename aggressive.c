@@ -33,8 +33,7 @@ void aggressive(void)
 		for (i=0;i<7;i++) {
 			//~1000 is about to touch
 			//any less than 500 and it starts having false positives
-			//note: could maybe make use of the ambient light function in 'prox'
-			if (GetProx(i)>=500) {	
+			if (GetProx(i)>=500 || GetAmbientLight(i)<4000) {	
 				switch (i) {
 					//left side sensors
 					case 0:left+=150;right+=100;break;
