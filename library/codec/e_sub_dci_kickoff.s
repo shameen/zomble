@@ -14,7 +14,7 @@
 ;    high frequency component
 
 .include "p30f6014A.inc"
-.include "e_common.inc"
+.include "library/codec/e_common.inc"
 
 
 .section .ndata,data,near

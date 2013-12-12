@@ -23,8 +23,9 @@ EPFL Ecole polytechnique federale de Lausanne http://www.epfl.ch
  * \author Code: Michael Bonani \n Doc: Jonathan Besuchet
  */
 
-#include "../motor_led/e_epuck_ports.h"
 #include "e_sound.h"
+#include "..\motor_led\e_init_port.h"
+#include "..\motor_led\e_epuck_ports.h"
 
 /*! \brief Initialize all you need to play sound on speaker
  * \warning You  must to call this function before playing a sound

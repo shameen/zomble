@@ -37,7 +37,7 @@
 
 
 .include "p30f6014A.inc"
-.include "e_common.inc"
+.include "library/codec/e_common.inc"
 
 
 .global _e_init_codec_slave

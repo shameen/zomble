@@ -38,9 +38,18 @@ void zomble(void)
         if (isZombie == 1) {
             left = left * 0.9;
             right = right * 0.9;
-            left += 38;
-            right += 38;
-			/*ZOMBIE AMBIENT LIGHT
+
+            /*make zombie look around left and right*/
+            //todo: maybe make it only peek side to side
+            //todo: check maxspeed
+            zombieCurTurn += zombieTurnSpeed;
+			left -= zombieCurTurn;
+            right += zombieCurTurn;
+            if (zombieCurTurn > zombieTurnSpeed * 50 || zombieCurTurn < -(zombieTurnSpeed * 50)) {
+                zombieTurnSpeed = zombieTurnSpeed * -1;
+            }
+
+			/*ZOMBIE AMBIENT LIGHT FIELD
 			for (i=0;i<7;i++) {
 				int ambient = GetAmbientLight(i);
 				if (ambient<3900) {
@@ -61,39 +70,30 @@ void zomble(void)
 				}	
 				else SetLed(i,0);
 			}*/
-			//ZOMBIE PROXIMITY SENSOR
+			//ZOMBIE PROXIMITY SENSOR FIELD
             for (i = 0; i < 7; i++) {
                 if (GetProx(i) >= 700) {
                     switch (i) {
                         //left side sensors
 	                    case 0: left += 100;right += 50;break;
-	                    case 1: left += 100;right -= 100;break;
-	                    case 2: left += 100;right -= 100;break;
+	                    case 1: left += 150;right -= 150;break;
+	                    case 2: left += 200;right -= 200;break;
                         //back sensors
-                    	case 3: left += 200; right -= 200;break;
-                    	case 4:left += 200;right -= 200;break;
+                    	case 3: left += 300; right -= 300;break;
+                    	case 4:left += 300;right -= 300;break;
                         //right side sensors
-	                    case 5:left -= 100;right += 100;break;
-	                    case 6:left -= 100;right += 100;break;
+	                    case 5:left -= 200;right += 200;break;
+	                    case 6:left -= 150;right += 150;break;
 	                    case 7:left += 100;right += 50;break;
                     }
                 }
 
             }
-            //make zombie look around left and right
-            //todo: maybe make it only peek side to side
-            //todo: check maxspeed
-            zombieCurTurn += zombieTurnSpeed;
-			left -= zombieCurTurn;
-            right += zombieCurTurn;
-            if (zombieCurTurn > zombieTurnSpeed * 50 || zombieCurTurn < -(zombieTurnSpeed * 50)) {
-                zombieTurnSpeed = zombieTurnSpeed * -1;
-            }
 
             int humanDetected = 0;
             //todo:search for 'red'
             if (GetProx(0) > 800 || GetProx(7) > 800) {
-				int ambient = GetAmbientLight(0)/2;
+				int ambient = GetAmbientLight(0);
                 if (ambient<3940) {
 					humanDetected==1;
 				}
@@ -112,7 +112,7 @@ void zomble(void)
                 humanDetected = 0;
                 waitlonger = 1;
             }
-            //limit max speed (note: will forget direction if its a fast slight curve)
+            /*limit max speed (note: will forget direction if its a fast slight curve)
             if (left > maxspeed_zombie) {
                 left = maxspeed_zombie;
             }
@@ -124,7 +124,7 @@ void zomble(void)
             }
             if (right < -maxspeed_zombie) {
                 right = -maxspeed_zombie;
-            }
+            }*/
 
         } else {
 //=======================================================================
@@ -167,7 +167,7 @@ void zomble(void)
 
 
 
-                //limit max speed (note: will forget direction if its a fast slight curve)
+                /*limit max speed (note: will forget direction if its a fast slight curve)
                 if (left > maxspeed_human) {
                     left = maxspeed_human;
                 }
@@ -179,7 +179,7 @@ void zomble(void)
                 }
                 if (right < -maxspeed_human) {
                     right = -maxspeed_human;
-                }
+                }*/
 
                 int becomingZombie = 0;
                 //todo: detect attack from zombie
