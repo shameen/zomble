@@ -8,9 +8,9 @@ void love(void)
 	long i = 0;						//loop counter
 	int left = 0;					//speed of left wheel
 	int right = 0;					//speed of right wheel
-	long waitinterval = 40000;		//processor steps to wait between each iteration of the main loop
+	long waitinterval = 30000;		//processor steps to wait between each iteration of the main loop
 	
-	long heartBeatInterval = 200000;	//Max interval before a heartbeat (in processor steps)
+	long heartBeatInterval = 800000;	//Max interval before a heartbeat (in processor steps)
 	long heartBeatCur = 0;			//Counts how many steps since last heartbeat
 	int heartBeatLEDs = 0;			//0 for all off, 1 for all on
 	
@@ -62,10 +62,11 @@ void love(void)
 		if (frontProx < 1) frontProx = 1;
 		//cool formula calculates maximum time for heartbeat
 		long heartBeatMax = heartBeatInterval;
+
+		if (GetProx(0)>300 || GetProx(7)>300)
+			heartBeatMax = heartBeatInterval/2;
 		if (GetProx(0)>900 || GetProx(7)>900)
-			heartBeatMax = heartBeatMax * 0.4;
-		else if (GetProx(0)>300 || GetProx(7)>300)
-			heartBeatMax = heartBeatMax * 0.6;
+			heartBeatMax = heartBeatInterval/4;
 		
 		//if it's time to do heartbeat
 		if (heartBeatCur*waitinterval > heartBeatMax) {
@@ -79,16 +80,17 @@ void love(void)
 			heartBeatCur = 0;
 		}
 		
-		//front sensors
-		if (GetProx(0)>1900) {
-			left = 200;
-			right=-200;
-			/*wait*/for(i=0;i<80000;i++) {asm("nop");}
-		}
-		if (GetProx(7)>1900) {
-			left = -200;
-			right = 200;
-			/*wait*/for(i=0;i<80000;i++) {asm("nop");}
+		/*front sensors*/
+		if (GetProx(0)>1000 || GetProx(1)>1000) {
+			if (GetProx(0)>GetProx(7)) {
+				left  = 200;
+				right = -200;
+			}
+			else if (GetProx(7)>1900) {
+				left  = -200;
+				right = 200;
+			}
+			for(i=0;i<80000;i++) {asm("nop");}
 		}
 		
 		

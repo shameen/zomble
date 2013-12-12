@@ -50,13 +50,14 @@ void maze(void)
 
 		while(curious==1){
 			if(GetProx(2) < 400){
+				//turn right
 				left = 300; 
 				right = 100; 
 				SetSpeedRight(right); 
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");}
 			}
-			while (GetProx(0) >= 500 || GetProx(7) >= 600 || GetProx(1) >= 400){
+			while (GetProx(0) >= 500 || GetProx(7) >= 600 || GetProx(1) >= 350){
 				//sharp turn left
 				left = -300; 
 				right = 300; 
@@ -72,7 +73,7 @@ void maze(void)
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
 			} 	
-			if ( GetProx(2) >= 400 && GetProx(0) < 500 && GetProx(7) < 600 && GetProx(1) < 400 && GetProx(6) <= 800 && GetProx(2) <= 600){ 
+			if ( GetProx(2) >= 400 && GetProx(0) < 500 && GetProx(7) < 600 && GetProx(1) < 350 && GetProx(6) <= 800 && GetProx(2) <= 600){ 
 				//go forwards
 				left = 300; 
 				right = 300; 
@@ -84,7 +85,7 @@ void maze(void)
 			} 
 			if (GetProx(5) > 600 || GetProx(6) > 600 ){ 
 				left = 300; 
-				right = -300; 
+				right = 0; 
 				SetSpeedRight(right); 
 				SetSpeedLeft(left); 
 				/*wait*/for(i=0;i<40000;i++) {asm("nop");} 
