@@ -40,10 +40,10 @@ void zomble(void)
             right = right * 0.9;
             left += 38;
             right += 38;
-			//ZOMBIE AMBIENT LIGHT
+			/*ZOMBIE AMBIENT LIGHT
 			for (i=0;i<7;i++) {
 				int ambient = GetAmbientLight(i);
-				if (ambient<3950) {
+				if (ambient<3900) {
 					switch (i) {
 	                    //left side sensors
 	                    case 0: left += 50;right += 25;break;
@@ -60,10 +60,10 @@ void zomble(void)
 					SetLed(i,1);
 				}	
 				else SetLed(i,0);
-			}
+			}*/
 			//ZOMBIE PROXIMITY SENSOR
             for (i = 0; i < 7; i++) {
-                if (GetProx(i) >= 600) {
+                if (GetProx(i) >= 700) {
                     switch (i) {
                         //left side sensors
 	                    case 0: left += 100;right += 50;break;
@@ -92,8 +92,8 @@ void zomble(void)
 
             int humanDetected = 0;
             //todo:search for 'red'
-            if (GetProx(0) > 900 || GetProx(7) > 900) {
-				int ambient = (GetAmbientLight(0)+GetAmbientLight(1))/2;
+            if (GetProx(0) > 800 || GetProx(7) > 800) {
+				int ambient = GetAmbientLight(0)/2;
                 if (ambient<3940) {
 					humanDetected==1;
 				}
@@ -106,7 +106,7 @@ void zomble(void)
                 //todo: adjust speed accordingly if it isnt straight ahead
                 SetSpeedLeft(maxspeed_zombiecharge);
                 SetSpeedRight(maxspeed_zombiecharge);
-                /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
+                /*wait */ for (i = 0; i < 1000000; i++) {asm("nop");}
                 left = -100;
                 right = -100;
                 humanDetected = 0;
@@ -214,7 +214,7 @@ void zomble(void)
                     /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
                     SetLed(4, 0);
                     /*wait */ for (i = 0; i < 100000; i++) {asm("nop");}
-
+					SetFrontLed(0);
                     isZombie = 1;
                 }
 
