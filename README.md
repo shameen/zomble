@@ -1,7 +1,11 @@
 zomble
 ======
 
-e-puck basic robot behaviours + more advanced zombie behaviour.
+e-puck basic robot behaviours + a more advanced zombie-like behaviour.
+The e-puck is a mobile robot, more info at [www.epuck.org](http://www.epuck.org/)
+
+libraries:
+----------
 
 **\library\**  is from epuck.org's [epucklib.zip](http://www.e-puck.org/index.php?option=com_phocadownload&view=file&id=43:epuck-library-compiled&Itemid=38)
 
