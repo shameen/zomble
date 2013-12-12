@@ -4,6 +4,8 @@ zomble
 e-puck basic robot behaviours + a more advanced zombie-like behaviour.
 The e-puck is a mobile robot, more info at [www.epuck.org](http://www.epuck.org/)
 
+A Robotics group project for Part C Computer Science at Loughborough University.
+
 libraries:
 ----------
 
